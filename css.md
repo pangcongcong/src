@@ -226,7 +226,17 @@ input:-moz-placeholder {color: #369;}
 ```css
 -webkit-overflow-scrolling:touch;overflow-y:scroll;
 ```
+-input光标设置与文字等高
+```css
+给input的height设定一个较小的高度，然后用padding去填充，基本上可以解决所有浏览器的问题
 
+
+input{
+height: 16px;
+padding: 4px 0px;
+font-size: 12px;
+}
+```
 - [禁止选中文本](http://www.qianduan.net/introduce-user-select/)
 ```css
 -moz-user-select:none;
@@ -269,7 +279,11 @@ user-select:none;
     <span class="pullDownIcon"></span><span class="pullDownLabel">正在载入中...</span>
 </div>
 ```
-
+-判断是否手机端
+```js
+$ua_phone = (bool)preg_match('#\b(ip(hone|od)|android|opera m(ob|in)i|windows (phone|ce)|blackberry'.'|s(ymbian|eries60|amsung)|p(laybook|alm|rofile/midp|laystation portable)|nokia|fennec|htc[-_]'.'|mobile|up.browser|[1-4][0-9]{2}x[1-4][0-9]{2})\b#i', $ua );
+$ua_tablet = (bool)preg_match('#\b(ipad|tablet|(Nexus 7)|up.browser|[1-4][0-9]{2}x[1-4][0-9]{2})\b#i', $ua );
+```
 - 手机多终端适配 media query[web app iphone4 iphone5 iphone6 响应式布局 适配代码](http://club.zoomla.cn/PItem?id=12594)
 ```css
 @media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
